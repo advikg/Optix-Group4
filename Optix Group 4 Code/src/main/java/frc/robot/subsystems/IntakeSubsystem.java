@@ -16,12 +16,16 @@ public class IntakeSubsystem extends SubsystemBase{
     Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
     Compressor phCompressor = new Compressor(1, PneumaticsModuleType.REVPH);
 
-    // Neo Motor Can S
+    // Neo Motor Can Spark Max
     CANSparkMax neoMotorCanSparkMax = new CANSparkMax(0, MotorType.kBrushless);
 
-    public Pneumatics () {
-        pitchSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.PNEUMATICS_SOLENOID_DEPLOY, Constants.PNEUMATICS_SOLENOID_RETRACT);
+    public void setNeo(double speed){
+        neoMotorCanSparkMax.set(speed);
     }
+
+    // public Pneumatics () {
+    //     pitchSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.PNEUMATICS_SOLENOID_DEPLOY, Constants.PNEUMATICS_SOLENOID_RETRACT);
+    // }
 
     public void CompressorOn() {
 
