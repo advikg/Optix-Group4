@@ -13,14 +13,17 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem {
     Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
-    public void TurnOnCompressor() {
+    @Override
+    public void periodic() {
+        CompressorOn();
+    }
+    public void CompressorOn() {
         pcmCompressor.enableDigital();
     }
 
-    public void TurnOffCompressor() {
+    public void CompressorOff() {
         pcmCompressor.disable();
     }
-
     // Neo Motor Can Spark Max
     CANSparkMax neoMotorCanSparkMax = new CANSparkMax(0, MotorType.kBrushless);
 
@@ -28,7 +31,6 @@ public class IntakeSubsystem {
         neoMotorCanSparkMax.set(speed);
     }
 
-    public void CompressorOn() {
-    }
+
 
 }
