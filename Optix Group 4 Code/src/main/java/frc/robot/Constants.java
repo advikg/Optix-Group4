@@ -13,6 +13,7 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+<<<<<<< HEAD
     public static final class Intake {
         public static final int forward1 = 1;
         public static final int reverse1 = 2;
@@ -20,3 +21,8 @@ public final class Constants {
         public static final int reverse2 = 5;
     }
 }
+=======
+
+    
+}
+>>>>>>> 334ee3415abab68b15d8611b0f07c8848e018368
