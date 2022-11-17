@@ -14,6 +14,5 @@ package frc.robot;
  */
 public final class Constants {
 
-    DoubleSolenoid DoublePCM = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-    DoubleSolenoid DoublePH = new DoubleSolenoid(9, PneumaticsModuleType.REVPH, 4, 5);
+    
 }
