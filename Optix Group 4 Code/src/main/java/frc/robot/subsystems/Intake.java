@@ -13,6 +13,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem {
+    Comressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
     @Override
     public void periodic() {
         CompressorOn();
