@@ -12,7 +12,6 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem {
-
     Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
     public void TurnOnCompressor() {
         pcmCompressor.enableDigital();
@@ -28,10 +27,6 @@ public class IntakeSubsystem {
     public void setNeo(double speed){
         neoMotorCanSparkMax.set(speed);
     }
-
-    // public Pneumatics () {
-    //     pitchSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.PNEUMATICS_SOLENOID_DEPLOY, Constants.PNEUMATICS_SOLENOID_RETRACT);
-    // }
 
     public void CompressorOn() {
     }
