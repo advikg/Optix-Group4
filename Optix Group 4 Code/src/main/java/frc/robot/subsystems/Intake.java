@@ -15,12 +15,12 @@ public class Intake extends SubsystemBase {
     Compressor pcmCompressor = new Compressor(Constants.Intake.compressor, PneumaticsModuleType.CTREPCM);
     DoubleSolenoid doubleSolenoid1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
     DoubleSolenoid doubleSolenoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
+    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(Constants.Intake.neoMotor, MotorType.kBrushless);
 
     public Intake() {
         doubleSolenoid1.set(Value.kOff);
         doubleSolenoid1.set(Value.kOff);
     }
-
     public void goForward () {
         doubleSolenoid1.set(Value.kForward);
         doubleSolenoid2.set(Value.kForward);
@@ -32,14 +32,16 @@ public class Intake extends SubsystemBase {
     public void compressorOn() {
         pcmCompressor.enableDigital();
     }
-
+    
     public void compressorOff() {
         pcmCompressor.disable();
     }
     // Neo Motor Can Spark Max
-    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(Constants.Intake.neoMotor, MotorType.kBrushless);
-
     public void setNeo(double speed){
         neoMotorCanSparkMax.set(speed);
+    }
+    @Override
+    public void periodic() {
+        compressorOn();
     }
 }
