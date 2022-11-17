@@ -21,6 +21,8 @@ public final class Constants {
         public static final int reverse1 = 2;
         public static final int forward2 = 4;
         public static final int reverse2 = 5;
+
+        public static final int neoMotor = 6;
     }
     
 }
