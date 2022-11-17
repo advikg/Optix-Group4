@@ -1,4 +1,5 @@
 package frc.robot.subsystems;
+import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -11,15 +12,28 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem {
-    Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
-    
 
-    public void CompressorOn() {
+    Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+    public void TurnOnCompressor() {
         pcmCompressor.enableDigital();
     }
 
-    public void CompressorOff() {
+    public void TurnOffCompressor() {
         pcmCompressor.disable();
     }
-    
+
+    // Neo Motor Can Spark Max
+    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(0, MotorType.kBrushless);
+
+    public void setNeo(double speed){
+        neoMotorCanSparkMax.set(speed);
+    }
+
+    // public Pneumatics () {
+    //     pitchSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.PNEUMATICS_SOLENOID_DEPLOY, Constants.PNEUMATICS_SOLENOID_RETRACT);
+    // }
+
+    public void CompressorOn() {
+    }
+
 }
