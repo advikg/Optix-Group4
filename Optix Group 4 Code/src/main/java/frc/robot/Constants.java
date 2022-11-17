@@ -16,8 +16,11 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-
+    public static final class Intake {
+        public static final int forward1 = 1;
+        public static final int reverse1 = 2;
+        public static final int forward2 = 4;
+        public static final int reverse2 = 5;
+    }
     
-    DoubleSolenoid DoublePCM = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-    DoubleSolenoid DoublePH = new DoubleSolenoid(9, PneumaticsModuleType.REVPH, 4, 5);
 }

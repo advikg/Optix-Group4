@@ -1,4 +1,5 @@
 package frc.robot.subsystems;
+import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -10,9 +11,8 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class IntakeSubsystem extends SubsystemBase{
-    DoubleSolenoid DoublePCM = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-    DoubleSolenoid DoublePH = new DoubleSolenoid(9, PneumaticsModuleType.REVPH, 4, 5);
+public class IntakeSubsystem {
+
     Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
     Compressor phCompressor = new Compressor(1, PneumaticsModuleType.REVPH);
 
@@ -28,6 +28,5 @@ public class IntakeSubsystem extends SubsystemBase{
     // }
 
     public void CompressorOn() {
-
     }
 }
