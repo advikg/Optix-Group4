@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
 public class Intake extends SubsystemBase {
-    Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+    Compressor pcmCompressor = new Compressor(Constants.Intake.compressor, PneumaticsModuleType.CTREPCM);
     DoubleSolenoid doubleSolenoid1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
     DoubleSolenoid doubleSolenoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
 
@@ -29,10 +29,6 @@ public class Intake extends SubsystemBase {
         doubleSolenoid1.set(Value.kReverse);
         doubleSolenoid2.set(Value.kReverse);
     }
-    @Override
-    public void periodic() {
-        compressorOn();
-    }
     public void compressorOn() {
         pcmCompressor.enableDigital();
     }
@@ -40,10 +36,8 @@ public class Intake extends SubsystemBase {
     public void compressorOff() {
         pcmCompressor.disable();
     }
-
-
     // Neo Motor Can Spark Max
-    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(0, MotorType.kBrushless);
+    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(Constants.Intake.neoMotor, MotorType.kBrushless);
 
     public void setNeo(double speed){
         neoMotorCanSparkMax.set(speed);
