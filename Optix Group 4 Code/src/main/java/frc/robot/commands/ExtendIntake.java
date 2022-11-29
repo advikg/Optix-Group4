@@ -31,6 +31,7 @@ public class ExtendIntake extends CommandBase {
   @Override
   public void execute() {
     intake.goForward();
+    intake.setNeo(0.5);
   }
 
   // Called once the command ends or is interrupted.

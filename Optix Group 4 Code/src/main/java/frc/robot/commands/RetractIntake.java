@@ -31,6 +31,7 @@ public class RetractIntake extends CommandBase {
   @Override
   public void execute() {
     intake.goBackward();
+    intake.setNeo(0);
   }
 
   // Called once the command ends or is interrupted.
