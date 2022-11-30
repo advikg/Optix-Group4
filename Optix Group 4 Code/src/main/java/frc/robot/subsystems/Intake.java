@@ -19,10 +19,10 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
  * This code is for the Intake subsystem, it defines the solenoids, neo motors, and compressor and contains all the necessary methods
 */
 public class Intake extends SubsystemBase {
-    Compressor pcmCompressor = new Compressor(Constants.Intake.compressor, PneumaticsModuleType.CTREPCM);
-    DoubleSolenoid doubleSolenoid1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
-    DoubleSolenoid doubleSolenoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward2, Constants.Intake.backward2);
-    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(Constants.Intake.neo_motor, MotorType.kBrushless);
+    private Compressor pcmCompressor = new Compressor(Constants.Intake.compressor, PneumaticsModuleType.CTREPCM);
+    private DoubleSolenoid doubleSolenoid1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
+    private DoubleSolenoid doubleSolenoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward2, Constants.Intake.backward2);
+    private CANSparkMax neoMotorCanSparkMax = new CANSparkMax(Constants.Intake.neo_motor, MotorType.kBrushless);
 
 
     // Initial constructor to turn off the solenoids at the start
