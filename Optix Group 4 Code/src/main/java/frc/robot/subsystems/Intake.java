@@ -11,28 +11,44 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
+/**
+ * @author Chilliam Weng
+ * @author Advik Garg
+ * @author Don Tran
+ * 
+ * This code is for the Intake subsystem, it defines the solenoids, neo motors, and compressor and contains all the necessary methods
+*/
 public class Intake extends SubsystemBase {
     Compressor pcmCompressor = new Compressor(Constants.Intake.compressor, PneumaticsModuleType.CTREPCM);
     DoubleSolenoid doubleSolenoid1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
-    DoubleSolenoid doubleSolenoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward1, Constants.Intake.backward1);
-    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(Constants.Intake.neoMotor, MotorType.kBrushless);
+    DoubleSolenoid doubleSolenoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.forward2, Constants.Intake.backward2);
+    CANSparkMax neoMotorCanSparkMax = new CANSparkMax(Constants.Intake.neo_motor, MotorType.kBrushless);
 
+
+    // Initial constructor to turn off the solenoids at the start
     public Intake() {
         doubleSolenoid1.set(Value.kOff);
-        doubleSolenoid1.set(Value.kOff);
+        doubleSolenoid2.set(Value.kOff);
     }
+
+    // Extends the intake using the double solenoids
     public void goForward () {
         doubleSolenoid1.set(Value.kForward);
         doubleSolenoid2.set(Value.kForward);
     }
+
+    // Retracts the intake using the double solenoids
     public void goBackward () {
         doubleSolenoid1.set(Value.kReverse);
         doubleSolenoid2.set(Value.kReverse);
     }
+
+    // Turns on compressor
     public void compressorOn() {
         pcmCompressor.enableDigital();
     }
     
+    // Turns off compressor
     public void compressorOff() {
         pcmCompressor.disable();
     }

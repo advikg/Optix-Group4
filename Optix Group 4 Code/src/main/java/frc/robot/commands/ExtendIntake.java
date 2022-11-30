@@ -7,7 +7,10 @@ package frc.robot.commands;
 import frc.robot.subsystems.Intake;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-/** An example command that uses an example subsystem. */
+/** 
+ * @author Advik Garg
+ * Cool command to extend the intake using the double solenoids and turn on the neo motors
+ */
 public class ExtendIntake extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final Intake intake;
@@ -15,7 +18,7 @@ public class ExtendIntake extends CommandBase {
   /**
    * Creates a new ExtendIntake.
    *
-   * @param subsystem The subsystem used by this command.
+   * @param intake The subsystem used by this command.
    */
   public ExtendIntake(Intake intake) {
     this.intake = intake;

@@ -23,8 +23,9 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
+  // Defines a new intake object
   private final Intake intake = new Intake();
-
+  // Defines a new extendIntake object
   private final ExtendIntake extendIntake = new ExtendIntake(intake);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -34,14 +35,13 @@ public class RobotContainer {
   }
 
   /**
-   * Use this method to define your button->command mappings. Buttons can be created by
-   * instantiating a {@link GenericHID} or one of its subclasses ({@link
-   * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
-   * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
+   * Creates an instance of an Xbox controller(pilot)
+   * Binds the Joystick button X to the extendIntake command
+   * Sets the default command as retractIntake
    */
   private void configureButtonBindings() {
     XboxController pilot = new XboxController(0);
-    JoystickButton X = new JoystickButton(pilot, Button.kY.value);
+    JoystickButton X = new JoystickButton(pilot, Button.kX.value);
     X.whenHeld(extendIntake);
     intake.setDefaultCommand(new RetractIntake(intake));
   }

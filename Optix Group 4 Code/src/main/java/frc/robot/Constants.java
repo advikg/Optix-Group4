@@ -21,7 +21,7 @@ public final class Constants {
         public static final int backward1 = 2;
         public static final int forward2 = 4;
         public static final int backward2 = 5;
-        public static final int neoMotor = 6;
+        public static final int neo_motor = 6;
         public static final int compressor = 0;
 
     }
