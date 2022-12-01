@@ -27,8 +27,6 @@ public class Intake extends SubsystemBase {
 
     // Initial constructor to turn off the solenoids at the start
     public Intake() {
-        doubleSolenoid1.set(Value.kOff);
-        doubleSolenoid2.set(Value.kOff);
     }
 
     // Extends the intake using the double solenoids

@@ -43,7 +43,6 @@ public class RobotContainer {
     XboxController pilot = new XboxController(0);
     JoystickButton X = new JoystickButton(pilot, Button.kX.value);
     X.whenHeld(extendIntake);
-    intake.setDefaultCommand(new RetractIntake(intake));
   }
 
   /**

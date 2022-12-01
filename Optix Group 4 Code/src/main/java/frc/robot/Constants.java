@@ -17,11 +17,11 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
  */
 public final class Constants {
     public static final class Intake {
-        public static final int forward1 = 1;
-        public static final int backward1 = 2;
-        public static final int forward2 = 4;
-        public static final int backward2 = 5;
-        public static final int neo_motor = 6;
+        public static final int forward1 = 5;
+        public static final int backward1 = 4;
+        public static final int forward2 = 2;
+        public static final int backward2 = 3;
+        public static final int neo_motor = 21;
         public static final int compressor = 0;
 
     }
